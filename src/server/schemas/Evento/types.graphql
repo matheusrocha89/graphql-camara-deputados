@@ -1,0 +1,39 @@
+type Evento {
+  id: ID!
+  dataHoraFim: String
+  dataHoraInicio: String
+  descricaoSituacao: String
+  descricaoTipo: String
+  fases: String
+  localCamara: LocalCamara
+  localExterno: String
+  orgaos: [Orgao]
+  titulo: String
+  uri: String
+  uriConvidados: String
+  uriDeputados: String
+}
+
+type LocalCamara {
+  andar: String
+  nome: String
+  predio: String
+  sala: String
+}
+
+type TipoEvento {
+  id: ID!
+  descricao: String,
+  nome: String,
+  sigla: String
+}
+
+type Orgao {
+  id: ID!
+  apelido: String
+  idTipoOrgao: Int
+  nome: String
+  sigla: String
+  tipoOrgao: String
+  uri: String
+}

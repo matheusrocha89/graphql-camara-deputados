@@ -1,0 +1,14 @@
+type Mesa {
+  id: ID!
+  dataFim: String
+  dataInicio: String
+  idLegislatura: Int
+  idPapel: String
+  nome: String
+  nomePapel: String
+  siglaPartido: String
+  siglaUf: String
+  uri: String
+  uriPartido: String
+  urlFoto: String
+}

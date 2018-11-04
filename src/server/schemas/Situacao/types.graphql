@@ -1,0 +1,6 @@
+type Situacao {
+  id: ID!
+  descricao: String
+  nome: String
+  sigla: String
+}

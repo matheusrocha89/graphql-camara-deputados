@@ -1,0 +1,19 @@
+type Pauta {
+  codRegime: Int
+  ordem: Int
+  proposicao: Proposicao
+  regime: String
+  situacaoItem: String
+  uriProposicaoRelacionada: String
+  uriVotacao: String
+}
+
+type Proposicao {
+  id: ID!
+  ano: Int
+  ementa: String
+  idTipo: Int
+  numero: Int
+  siglaTipo: String
+  uri: String
+}

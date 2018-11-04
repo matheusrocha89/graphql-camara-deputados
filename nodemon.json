@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "watch": ["src/server"],
+  "execMap": {
+    "js": "node ."
+  }
+}

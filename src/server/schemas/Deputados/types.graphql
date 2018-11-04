@@ -1,0 +1,60 @@
+type Deputado {
+  id: ID!
+  cpf: String
+  dataFalecimento: String
+  dataNascimento: String
+  escolaridade: String
+  municipioNascimento: String
+  nomeCivil: String
+  redeSocial: [String]
+  sexo: String
+  ufNascimento: String
+  uri: String
+  urlWebsite: String
+}
+
+type UltimoStatus {
+  id: ID!
+  condicaoEleitoral: String
+  data: String
+  descricaoStatus: String
+  cabinet: String
+  idLegislatura: Int
+  nome: String
+  nomeEleitoral: String
+  siglaPartido: String
+  siglaUf: String
+  situacao: String
+  uri: String
+  uriPartido: String
+  urlFoto: String
+}
+
+type Cabinete {
+  andar: String
+  email: String
+  nome: String
+  predio: String
+  sala: String
+  telefone: String
+}
+
+type Despesa {
+  ano: Int
+  cnpjCpfFornecedor: String
+  dataDocumento: String
+  idDocumento: Int
+  idLote: Int
+  idTipoDocumento: Int
+  mes: Int
+  nomeFornecedor: String
+  numDocumento: String
+  numRessarcimento: String
+  parcela: Int
+  tipoDespesa: String
+  tipoDocumento: String
+  urlDocumento: String
+  valorDocumento: Int
+  valorGlosa: Int
+  valorLiquido: Int
+}

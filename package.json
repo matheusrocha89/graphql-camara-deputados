@@ -1,0 +1,37 @@
+{
+  "name": "graphql-camara-deputados",
+  "version": "1.0.0",
+  "description": "API GraphQL com os dados da câmara de deputados do Brasil",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --config nodemon.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusrocha89/graphql-camara-deputados.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusrocha89/graphql-camara-deputados/issues"
+  },
+  "homepage": "https://github.com/matheusrocha89/graphql-camara-deputados#readme",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "5.8.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "nodemon": "1.18.5"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.16.7",
+    "lodash": "^4.17.11"
+  }
+}

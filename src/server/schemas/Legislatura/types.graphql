@@ -1,0 +1,6 @@
+type Legislatura {
+  id: ID!
+  dataFim: String
+  dataInicio: String
+  uri: String
+}

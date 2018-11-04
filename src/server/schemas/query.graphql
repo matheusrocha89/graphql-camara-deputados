@@ -1,0 +1,210 @@
+# import Deputado, Despesa from './Deputados/types.graphql'
+# import Pauta from './Pauta/types.graphql'
+# import Situacao from './Situacao/types.graphql'
+# import Bloco from './Bloco/types.graphql'
+# import Orgao, MembroOrgao from './Orgao/types.graphql'
+# import Evento, TipoEvento from './Evento/types.graphql'
+# import Votacao, Voto from './Votacao/types.graphql'
+# import Partido from './Partido/types.graphql'
+# import Proposicao, AutorProposicao, Tramitacao from './Proposicao/types.graphql'
+# import Legislatura from './Legislatura/types.graphql'
+# import Mesa from './Mesa/types.graphql'
+
+type Query {
+  blocos(
+    id: [Int],
+    idLegislatura: [Int],
+    siglaPartido: [String],
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Bloco]
+  bloco(id: ID!): Bloco
+
+  deputados(
+    id: [Int],
+    nome: String,
+    idLegislatura: [Int],
+    siglaUf: [String],
+    siglaPartido: [String],
+    siglaSexo: String,
+    pagina: Int,
+    itens: Int,
+    dataInicio: String,
+    dataFim: String,
+    ordem: String,
+    ordenarPor: String
+  ): [Deputado]
+  deputado(id: ID!): Deputado
+  deputadoDespesas(
+    id: ID!,
+    idLegislatura: [Int],
+    ano: [Int],
+    mes: [Int],
+    cnpjCpfFornecedor: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Despesa]
+  deputadoEventos(
+    id: ID!,
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Evento]
+  deputadoOrgaos(
+    id: ID!,
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Orgao]
+
+  eventos(
+    id: [Int],
+    idTipoEvento: [Int],
+    idSituacao: [Int],
+    idTipoOrgao: [Int],
+    idOrgao: [Int],
+    dataInicio: String,
+    dataFim: String,
+    horaInicio: String,
+    horaFim: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Evento]
+  evento(id: ID!): Evento
+  eventoDeputados(id: ID!): [Deputado]
+  eventoOrgaos(id: ID!): [Orgao]
+  eventoPautas(id: ID!): [Pauta]
+  eventoSituacoes: [Situacao]
+  eventoTipos: [TipoEvento]
+
+  legislaturas(
+    id: [Int],
+    data: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Legislatura]
+  legislatura(id: ID!): Legislatura
+  legislaturaMesa(
+    id: String,
+    dataInicio: String,
+    dataFim: String
+  ): [Mesa]
+
+  partidos(
+    sigla: [String],
+    dataInicio: String,
+    dataFim: String,
+    idLegislatura: [Int],
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Partido]
+  partido(id: ID!): Partido
+  partidoMembros(
+    id: ID!,
+    dataInicio: String,
+    dataFim: String,
+    idLegislatura: [Int],
+    ordenarPor: String,
+    ordem: String,
+    itens: Int,
+    pagina: Int
+  ): [Deputado]
+
+  proposicoes(
+    id: [Int],
+    siglaTipo: [String],
+    numero: [Int],
+    ano: [Int],
+    idAutor: [Int],
+    autor: String,
+    siglaPartidoAutor: [String],
+    idPartidoAutor: Int,
+    siglaUfAutor: [String],
+    keywords: [String],
+    tramitacaoSenado: Boolean,
+    dataInicio: String,
+    dataFim: String,
+    dataApresentacaoInicio: String,
+    dataApresentacaoFim: String,
+    idSituacao: [Int],
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Proposicao]
+  proposicao(id: ID!): Proposicao
+  proposicaoAutores(id: ID!): [AutorProposicao]
+  proposicaoTramitacoes(
+    id: ID!,
+    dataInicio: String,
+    dataFim: String
+  ): [Tramitacao]
+  proposicaoVotacoes(id: ID!): [Votacao]
+  proposicaoSituacoes: [Situacao]
+
+  orgaos(
+    id: [Int],
+    sigla: [String],
+    idTipoOrgao: [Int],
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int
+    ordem: String
+    ordenarPor: String
+  ): [Orgao]
+  orgao(id: ID!): Orgao
+  orgaoEventos(
+    id: ID!,
+    idTipoEvento: [Int],
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Evento]
+  orgaoMembros(
+    id: ID!,
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int
+  ): [MembroOrgao]
+  orgaoSituacoes: [Situacao]
+
+  votacoes(
+    id: [Int],
+    idOrgao: [Int],
+    idProposicao: [Int],
+    idLegislatura: [Int],
+    dataInicio: String,
+    dataFim: String,
+    pagina: Int,
+    itens: Int,
+    ordem: String,
+    ordenarPor: String
+  ): [Votacao]
+  votacao(id: ID!): Votacao
+  votacaoVotos(
+    id: ID!,
+    pagina: Int,
+    itens: Int
+  ): [Voto]
+}
