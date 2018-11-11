@@ -5,8 +5,8 @@ import clientAPI from '../../clients/deputados-api';
 const legislaturas = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const legislatures = await clientAPI.get(`/legislaturas?${query}`);
-    return legislatures.dados;
+    const { data } = await clientAPI.get(`/legislaturas?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +14,8 @@ const legislaturas = async (_, args) => {
 
 const legislatura = async (_, { id }) => {
   try {
-    const legislature = await clientAPI.get(`/legislaturas/${id}`);
-    return legislature.dados;
+    const { data } = await clientAPI.get(`/legislaturas/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +24,8 @@ const legislatura = async (_, { id }) => {
 const legislaturaMesa = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const tables = await clientAPI.get(`/legislaturas/${args.id}/mesa?${query}`);
-    return tables.dados;
+    const { data } = await clientAPI.get(`/legislaturas/${args.id}/mesa?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }

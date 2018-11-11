@@ -5,8 +5,8 @@ import clientAPI from '../../clients/deputados-api';
 const partidos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const parties = await clientAPI.get(`/partidos?${query}`);
-    return parties.dados;
+    const { data } = await clientAPI.get(`/partidos?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +14,8 @@ const partidos = async (_, args) => {
 
 const partido = async (_, { id }) => {
   try {
-    const party = await clientAPI.get(`/partidos/${id}`);
-    return party.dados;
+    const { data } = await clientAPI.get(`/partidos/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +24,8 @@ const partido = async (_, { id }) => {
 const partidoMembros = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const members = await clientAPI.get(`/partidos/${args.id}/membros?${query}`);
-    return members.dados;
+    const { data } = await clientAPI.get(`/partidos/${args.id}/membros?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }

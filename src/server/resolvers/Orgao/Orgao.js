@@ -5,8 +5,8 @@ import clientAPI from '../../clients/deputados-api';
 const orgaos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const organs = await clientAPI.get(`/orgaos?${query}`);
-    return organs.dados;
+    const { data } = await clientAPI.get(`/orgaos?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +14,8 @@ const orgaos = async (_, args) => {
 
 const orgao = async (_, { id }) => {
   try {
-    const organ = await clientAPI.get(`/orgaos/${id}`);
-    return organ.dados;
+    const { data } = await clientAPI.get(`/orgaos/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +24,8 @@ const orgao = async (_, { id }) => {
 const orgaoEventos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const events = await clientAPI.get(`/orgaos/${args.id}/eventos?${query}`);
-    return events.dados;
+    const { data } = await clientAPI.get(`/orgaos/${args.id}/eventos?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -34,8 +34,8 @@ const orgaoEventos = async (_, args) => {
 const orgaoMembros = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const members = await clientAPI.get(`/orgaos/${args.id}/membros?${query}`);
-    return members.dados;
+    const { data } = await clientAPI.get(`/orgaos/${args.id}/membros?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -43,8 +43,8 @@ const orgaoMembros = async (_, args) => {
 
 const orgaoSituacoes = async () => {
   try {
-    const situations = await clientAPI.get('/referencias/orgaos/idSituacao');
-    return situations.dados;
+    const { data } = await clientAPI.get('/referencias/orgaos/idSituacao');
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }

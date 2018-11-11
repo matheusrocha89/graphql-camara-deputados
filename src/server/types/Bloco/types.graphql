@@ -3,5 +3,4 @@ type Bloco {
   idLegislatura: String
   nome: String
   uri: String
-  links: [BlockLink]
 }

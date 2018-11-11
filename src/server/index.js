@@ -1,27 +1,25 @@
 import { GraphQLServer } from 'graphql-yoga';
 
-// import Mutation from './resolvers/Mutation';
-// import Query from './resolvers/Query';
+import typeDefs from './types';
+import Query from './resolvers/Query';
+import { removeEmptyProperties } from './utils/object';
 
 export default async () => {
   try {
-    // const resolvers = {
-    //   Query,
-    //   Mutation,
-    //   Subscription,
-    // };
+    const resolvers = {
+      Query,
+    };
 
-    // const pubsub = new PubSub();
-    // const server = new GraphQLServer({
-    //   typeDefs: './src/server/schema.graphql',
-    //   resolvers,
-    //   context: req => ({
-    //     ...req,
-    //     pubsub,
-    //   }),
-    // });
+    const server = new GraphQLServer({
+      typeDefs,
+      resolvers,
+    });
 
-    // server.start(() => console.log('server running on port 4000'));
+    const options = {
+      formatParams: args => removeEmptyProperties(args),
+    };
+
+    server.start(options, ({ port }) => console.log(`Server is running on port: ${port}`));
   } catch (e) {
     throw new Error(e.message);
   }

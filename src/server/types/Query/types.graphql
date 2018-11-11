@@ -1,4 +1,4 @@
-# import Deputado, Despesa from './Deputados/types.graphql'
+# import Deputado, DeputadoSimples, Despesa from './Deputados/types.graphql'
 # import Pauta from './Pauta/types.graphql'
 # import Situacao from './Situacao/types.graphql'
 # import Bloco from './Bloco/types.graphql'
@@ -35,7 +35,7 @@ type Query {
     dataFim: String,
     ordem: String,
     ordenarPor: String
-  ): [Deputado]
+  ): [DeputadoSimples]
   deputado(id: ID!): Deputado
   deputadoDespesas(
     id: ID!,

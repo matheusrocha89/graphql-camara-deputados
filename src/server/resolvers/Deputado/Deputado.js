@@ -5,8 +5,9 @@ import clientAPI from '../../clients/deputados-api';
 const deputados = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const deputies = await clientAPI.get(`/deputados?${query}`);
-    return deputies.dados;
+    const { data } = await clientAPI.get(`/deputados?${query}`);
+    console.log(data.dados);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +15,8 @@ const deputados = async (_, args) => {
 
 const deputado = async (_, { id }) => {
   try {
-    const deputy = await clientAPI.get(`/deputados/${id}`);
-    return deputy.dados;
+    const { data } = await clientAPI.get(`/deputados/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +25,8 @@ const deputado = async (_, { id }) => {
 const deputadoDespesas = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const costs = await clientAPI.get(`/deputados/${args.id}/despesas?${query}`);
-    return costs.dados;
+    const { data } = await clientAPI.get(`/deputados/${args.id}/despesas?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -34,8 +35,8 @@ const deputadoDespesas = async (_, args) => {
 const deputadoEventos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const events = await clientAPI.get(`/deputados/${args.id}/eventos?${query}`);
-    return events.dados;
+    const { data } = await clientAPI.get(`/deputados/${args.id}/eventos?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -44,8 +45,8 @@ const deputadoEventos = async (_, args) => {
 const deputadoOrgaos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const organs = await clientAPI.get(`/deputados/${args.id}/orgaos${query}`);
-    return organs.dados;
+    const { data } = await clientAPI.get(`/deputados/${args.id}/orgaos${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }

@@ -5,8 +5,8 @@ import clientAPI from '../../clients/deputados-api';
 const proposicoes = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const propositions = await clientAPI.get(`/proposicoes?${query}`);
-    return propositions.dados;
+    const { data } = await clientAPI.get(`/proposicoes?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +14,8 @@ const proposicoes = async (_, args) => {
 
 const proposicao = async (_, { id }) => {
   try {
-    const proposition = await clientAPI.get(`/proposicoes/${id}`);
-    return proposition.dados;
+    const { data } = await clientAPI.get(`/proposicoes/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +24,8 @@ const proposicao = async (_, { id }) => {
 const proposicaoAutores = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const authors = await clientAPI.get(`/proposicoes/${args.id}/autores?${query}`);
-    return authors;
+    const { data } = await clientAPI.get(`/proposicoes/${args.id}/autores?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -34,8 +34,8 @@ const proposicaoAutores = async (_, args) => {
 const proposicaoTramitacoes = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const processings = await clientAPI.get(`/proposicoes/${args.id}/tramitacoes?${query}`);
-    return processings.dados;
+    const { data } = await clientAPI.get(`/proposicoes/${args.id}/tramitacoes?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -43,8 +43,8 @@ const proposicaoTramitacoes = async (_, args) => {
 
 const proposicaoVotacoes = async (_, { id }) => {
   try {
-    const polls = await clientAPI.get(`/proposicoes/${id}/votacoes`);
-    return polls.dados;
+    const { data } = await clientAPI.get(`/proposicoes/${id}/votacoes`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -52,8 +52,8 @@ const proposicaoVotacoes = async (_, { id }) => {
 
 const proposicaoSituacoes = async () => {
   try {
-    const situations = await clientAPI.get('/referencias/proposicoes/idSituacao');
-    return situations.dados;
+    const { data } = await clientAPI.get('/referencias/proposicoes/idSituacao');
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }

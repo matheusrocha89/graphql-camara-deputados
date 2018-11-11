@@ -5,8 +5,8 @@ import clientAPI from '../../clients/deputados-api';
 const votacoes = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const polls = await clientAPI.get(`/votacoes?${query}`);
-    return polls.dados;
+    const { data } = await clientAPI.get(`/votacoes?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -14,8 +14,8 @@ const votacoes = async (_, args) => {
 
 const votacao = async (_, { id }) => {
   try {
-    const poll = await clientAPI.get(`/votacoes/${id}`);
-    return poll.dados;
+    const { data } = await clientAPI.get(`/votacoes/${id}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
@@ -24,8 +24,8 @@ const votacao = async (_, { id }) => {
 const votacaoVotos = async (_, args) => {
   try {
     const query = querystring.stringify(args);
-    const votes = await clientAPI.get(`/votacoes/${args.id}/votos?${query}`);
-    return votes.dados;
+    const { data } = await clientAPI.get(`/votacoes/${args.id}/votos?${query}`);
+    return data.dados;
   } catch (e) {
     throw new Error(e.message);
   }
