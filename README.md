@@ -1,4 +1,4 @@
-# graphql-camara-deputados
+# GraphQL - Câmara dos Deputados
 API GraphQL com os dados da câmara de deputados do Brasil
 
 # Install
