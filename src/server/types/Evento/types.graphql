@@ -7,7 +7,7 @@ type Evento {
   fases: String
   localCamara: LocalCamara
   localExterno: String
-  orgaos: [Orgao]
+  orgaos: [OrgaoEvento]
   titulo: String
   uri: String
   uriConvidados: String
@@ -28,7 +28,7 @@ type TipoEvento {
   sigla: String
 }
 
-type Orgao {
+type OrgaoEvento {
   id: ID!
   apelido: String
   idTipoOrgao: Int

@@ -6,7 +6,6 @@ const deputados = async (_, args) => {
   try {
     const query = querystring.stringify(args);
     const { data } = await clientAPI.get(`/deputados?${query}`);
-    console.log(data.dados);
     return data.dados;
   } catch (e) {
     throw new Error(e.message);

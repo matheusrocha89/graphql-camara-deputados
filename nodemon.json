@@ -2,6 +2,6 @@
   "verbose": true,
   "watch": ["src/server"],
   "execMap": {
-    "js": "node ."
+    "js": "babel-node ."
   }
 }

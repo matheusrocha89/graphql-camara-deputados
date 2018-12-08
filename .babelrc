@@ -1,9 +1,8 @@
 {
   "presets": [
-    "env",
-    "es2017"
+    ["@babel/env", { "targets": { "node": "current" } }]
   ],
   "plugins": [
-    "transform-object-rest-spread"
+    "import-graphql"
   ]
 }

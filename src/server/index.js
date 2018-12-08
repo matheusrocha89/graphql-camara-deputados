@@ -1,14 +1,15 @@
 import { GraphQLServer } from 'graphql-yoga';
 
-import typeDefs from './types';
+import getTypeDefs from './types';
 import Query from './resolvers/Query';
 import { removeEmptyProperties } from './utils/object';
 
-export default async () => {
+const startServer = () => {
   try {
     const resolvers = {
       Query,
     };
+    const typeDefs = getTypeDefs();
 
     const server = new GraphQLServer({
       typeDefs,
@@ -24,3 +25,9 @@ export default async () => {
     throw new Error(e.message);
   }
 };
+
+if (process.env.NODE_ENV === 'production') {
+  startServer();
+}
+
+export default startServer;

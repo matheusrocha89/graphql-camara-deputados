@@ -1,14 +1,14 @@
 type Pauta {
   codRegime: Int
   ordem: Int
-  proposicao: Proposicao
+  proposicao: ProposicaoPauta
   regime: String
   situacaoItem: String
   uriProposicaoRelacionada: String
   uriVotacao: String
 }
 
-type Proposicao {
+type ProposicaoPauta {
   id: ID!
   ano: Int
   ementa: String
