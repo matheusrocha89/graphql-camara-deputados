@@ -2,16 +2,6 @@ import querystring from 'query-string';
 
 import clientAPI from '../../clients/deputados-api';
 
-const votacoes = async (_, args) => {
-  try {
-    const query = querystring.stringify(args);
-    const { data } = await clientAPI.get(`/votacoes?${query}`);
-    return data.dados;
-  } catch (e) {
-    throw new Error(e.message);
-  }
-};
-
 const votacao = async (_, { id }) => {
   try {
     const { data } = await clientAPI.get(`/votacoes/${id}`);
@@ -33,7 +23,6 @@ const votacaoVotos = async (_, args) => {
 
 
 export default {
-  votacoes,
   votacao,
   votacaoVotos,
 };

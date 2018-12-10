@@ -189,18 +189,6 @@ type Query {
   ): [MembroOrgao]
   orgaoSituacoes: [Situacao]
 
-  votacoes(
-    id: [Int],
-    idOrgao: [Int],
-    idProposicao: [Int],
-    idLegislatura: [Int],
-    dataInicio: String,
-    dataFim: String,
-    pagina: Int,
-    itens: Int,
-    ordem: String,
-    ordenarPor: String
-  ): [Votacao]
   votacao(id: ID!): Votacao
   votacaoVotos(
     id: ID!,
