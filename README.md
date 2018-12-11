@@ -28,3 +28,45 @@ To run the production server run:
 ```
 yarn start
 ```
+
+# Some examples of queries
+
+```
+# List of deputies
+query {
+  deputados {
+    id
+    siglaPartido
+    urlFoto
+  }
+}
+```
+
+```
+# Data from one deputy
+query {
+  deputado(id: "178912") {
+    id
+    escolaridade
+    cpf
+    dataNascimento
+    nomeCivil
+    municipioNascimento
+  }
+}
+```
+
+```
+# Expenses of a deputy
+query {
+  deputadoDespesas(id: "178912") {
+    ano
+    valorDocumento
+    valorLiquido
+    cnpjCpfFornecedor
+    dataDocumento
+    tipoDespesa
+    urlDocumento
+  }
+}
+```
