@@ -65,7 +65,7 @@ type Despesa {
   tipoDespesa: String
   tipoDocumento: String
   urlDocumento: String
-  valorDocumento: Int
+  valorDocumento: Float
   valorGlosa: Int
   valorLiquido: Int
 }
