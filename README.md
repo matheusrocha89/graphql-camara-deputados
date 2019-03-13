@@ -3,7 +3,7 @@ API GraphQL com os dados da câmara de deputados do Brasil
 
 # Demo
 
-[Demo](https://floating-taiga-86602.herokuapp.com/)
+[Demo](https://graphql-camara-deputados.herokuapp.com/)
 
 # Install
 
