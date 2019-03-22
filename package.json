@@ -4,7 +4,7 @@
   "description": "API GraphQL com os dados da câmara de deputados do Brasil",
   "main": "index.js",
   "scripts": {
-    "pre-build": "rm -rf ./dist",
+    "pre-build": "rimraf ./dist",
     "build": "yarn pre-build && babel -d ./dist ./src/server -s",
     "start:dev": "nodemon --config nodemon.json",
     "start": "NODE_ENV=production node ./dist/index.js",
@@ -34,7 +34,8 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
-    "nodemon": "1.18.5"
+    "nodemon": "1.18.5",
+    "rimraf": "2.6.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
