@@ -1,4 +1,5 @@
 import querystring from 'query-string';
+import omit from 'lodash/omit';
 
 import clientAPI from '../../clients/deputados-api';
 
@@ -23,7 +24,7 @@ const partido = async (_, { id }) => {
 
 const partidoMembros = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/partidos/${args.id}/membros?${query}`);
     return data.dados;
   } catch (e) {

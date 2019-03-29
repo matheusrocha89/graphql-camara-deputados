@@ -1,4 +1,5 @@
 import querystring from 'query-string';
+import omit from 'lodash/omit';
 
 import clientAPI from '../../clients/deputados-api';
 
@@ -23,7 +24,7 @@ const orgao = async (_, { id }) => {
 
 const orgaoEventos = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/orgaos/${args.id}/eventos?${query}`);
     return data.dados;
   } catch (e) {
@@ -33,7 +34,7 @@ const orgaoEventos = async (_, args) => {
 
 const orgaoMembros = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/orgaos/${args.id}/membros?${query}`);
     return data.dados;
   } catch (e) {
