@@ -1,10 +1,11 @@
 import querystring from 'query-string';
+import omit from 'lodash/omit';
 
 import clientAPI from '../../clients/deputados-api';
 
 const deputados = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados?${query}`);
     return data.dados;
   } catch (e) {
@@ -23,7 +24,7 @@ const deputado = async (_, { id }) => {
 
 const deputadoDespesas = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/despesas?${query}`);
     return data.dados;
   } catch (e) {
@@ -33,7 +34,7 @@ const deputadoDespesas = async (_, args) => {
 
 const deputadoEventos = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/eventos?${query}`);
     return data.dados;
   } catch (e) {
@@ -43,7 +44,7 @@ const deputadoEventos = async (_, args) => {
 
 const deputadoOrgaos = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = querystring.stringify(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/orgaos${query}`);
     return data.dados;
   } catch (e) {
