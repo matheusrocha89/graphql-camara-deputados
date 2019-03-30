@@ -22,27 +22,27 @@
   },
   "homepage": "https://github.com/matheusrocha89/graphql-camara-deputados#readme",
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.2.0",
-    "@babel/node": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "babel-plugin-import-graphql": "^2.6.2",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "babel-plugin-import-graphql": "^2.7.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
-    "eslint": "5.8.0",
+    "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.12.4",
     "nodemon": "1.18.10",
     "rimraf": "2.6.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "graphql-yoga": "^1.16.7",
+    "graphql-yoga": "^1.17.4",
     "lodash": "^4.17.11",
-    "merge-graphql-schemas": "^1.5.7",
-    "query-string": "^6.2.0"
+    "merge-graphql-schemas": "^1.5.8",
+    "query-string": "^6.4.2"
   }
 }
