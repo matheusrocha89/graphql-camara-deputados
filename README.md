@@ -34,7 +34,7 @@ yarn start
 ```
 # List of deputies
 query {
-  deputados {
+  deputados (pagina: 1, itens: 20) {
     id
     siglaPartido
     urlFoto
