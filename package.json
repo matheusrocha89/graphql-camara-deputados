@@ -6,7 +6,7 @@
   "scripts": {
     "pre-build": "rimraf ./dist",
     "build": "yarn pre-build && babel -d ./dist ./src/server -s",
-    "start:dev": "nodemon --config nodemon.json",
+    "start:dev": "BABEL_DISABLE_CACHE=1 nodemon --config nodemon.json",
     "start": "NODE_ENV=production node ./dist/index.js",
     "lint": "eslint ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
