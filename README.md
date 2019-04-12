@@ -35,9 +35,19 @@ yarn start
 # List of deputies
 query {
   deputados (pagina: 1, itens: 20) {
-    id
-    siglaPartido
-    urlFoto
+    pageInfo {
+      current
+      next
+      first
+      last
+    }
+    edges {
+      node {
+        id
+        siglaPartido
+        urlFoto
+      }
+    }
   }
 }
 ```
@@ -59,14 +69,24 @@ query {
 ```
 # Expenses of a deputy
 query {
-  deputadoDespesas(id: "178912") {
-    ano
-    valorDocumento
-    valorLiquido
-    cnpjCpfFornecedor
-    dataDocumento
-    tipoDespesa
-    urlDocumento
+  deputadoDespesas(id: "178912", pagina: 1, itens: 15) {
+    pageInfo {
+      current
+      next
+      first
+      last
+    }
+    edges {
+      node {
+        ano
+        valorDocumento
+        valorLiquido
+        cnpjCpfFornecedor
+        dataDocumento
+        tipoDespesa
+        urlDocumento
+      }
+    }
   }
 }
 ```
