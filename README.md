@@ -17,16 +17,16 @@ To run the server just run: `yarn start:dev`
 
 To run the production version of the server already transpiled and without the need of `babel-node`, follow these steps.
 
-First you need to build the version, the transpiled code will be created on `./dist` folder.
-
-```
-yarn build
-```
-
-To run the production server run:
+You just need to run one commend and the transpiled code will be created on `./dist` folder. And run the production code:
 
 ```
 yarn start
+```
+
+If you just want to build the production mode you can just run:
+
+```
+yarn build
 ```
 
 # Some examples of queries
