@@ -1,15 +1,3 @@
-# import Deputado, DeputadoSimples, Despesa from './Deputados/types.graphql'
-# import Pauta from './Pauta/types.graphql'
-# import Situacao from './Situacao/types.graphql'
-# import Bloco from './Bloco/types.graphql'
-# import Orgao, MembroOrgao from './Orgao/types.graphql'
-# import Evento, TipoEvento from './Evento/types.graphql'
-# import Votacao, Voto from './Votacao/types.graphql'
-# import Partido from './Partido/types.graphql'
-# import Proposicao, AutorProposicao, Tramitacao from './Proposicao/types.graphql'
-# import Legislatura from './Legislatura/types.graphql'
-# import Mesa from './Mesa/types.graphql'
-
 type Query {
   blocos(
     id: [Int],
