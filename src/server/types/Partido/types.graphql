@@ -10,6 +10,15 @@ type Partido {
   urlWebSite: String
 }
 
+type PartidoCursor {
+  pageInfo: PageInfo
+  edges: [PartidoEdge]
+}
+
+type PartidoEdge {
+  node: Partido
+}
+
 type StatusPartido {
   data: String
   idLegislatura: Int

@@ -4,3 +4,12 @@ type Bloco {
   nome: String
   uri: String
 }
+
+type BlocoCursor {
+  edges: [BlocoEdge]
+  pageInfo: PageInfo!
+}
+
+type BlocoEdge {
+  node: Bloco
+}

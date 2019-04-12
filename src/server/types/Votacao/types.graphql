@@ -52,6 +52,15 @@ type Voto {
   voto: String
 }
 
+type VotoCursor {
+  pageInfo: PageInfo
+  edges: [VotoEdge]
+}
+
+type VotoEdge {
+  node: Voto
+}
+
 type Parlamentar {
   id: ID!
   idLegislatura: Int

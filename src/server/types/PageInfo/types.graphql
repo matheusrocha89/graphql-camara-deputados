@@ -1,0 +1,6 @@
+type PageInfo {
+  current: Int!
+  next: Int
+  first: Int!
+  last: Int!
+}
