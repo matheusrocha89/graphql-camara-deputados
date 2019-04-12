@@ -23,6 +23,15 @@ type Proposicao {
   urnFinal: String
 }
 
+type ProposicaoCursor {
+  pageInfo: PageInfo
+  edges: [ProposicaoEdge]
+}
+
+type ProposicaoEdge {
+  node: Proposicao
+}
+
 type StatusProposicao {
   dataHora: String
   descricaoSituacao: String

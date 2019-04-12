@@ -4,3 +4,12 @@ type Legislatura {
   dataInicio: String
   uri: String
 }
+
+type LegislaturaCursor {
+  pageInfo: PageInfo!
+  edges: [LegislaturaEdge]
+}
+
+type LegislaturaEdge {
+  node: Legislatura
+}

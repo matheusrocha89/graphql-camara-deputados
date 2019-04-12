@@ -24,6 +24,15 @@ type DeputadoSimples {
   urlFoto: String
 }
 
+type DeputadoSimplesCursor {
+  edges: [DeputadoSimplesEdge]!
+  pageInfo: PageInfo!
+}
+
+type DeputadoSimplesEdge {
+  node: DeputadoSimples
+}
+
 type UltimoStatus {
   id: ID!
   condicaoEleitoral: String
@@ -68,4 +77,13 @@ type Despesa {
   valorDocumento: Float
   valorGlosa: Float
   valorLiquido: Float
+}
+
+type DespesaCursor {
+  edges: [DespesaEdge]!
+  pageInfo: PageInfo!
+}
+
+type DespesaEdge {
+  node: Despesa
 }

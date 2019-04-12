@@ -15,6 +15,15 @@ type Orgao {
   urlWebsite: String
 }
 
+type OrgaoCursor {
+  pageInfo: PageInfo
+  edges: [OrgaoEdge]
+}
+
+type OrgaoEdge {
+  node: Orgao
+}
+
 type MembroOrgao {
   id: ID!
   dataFim: String
