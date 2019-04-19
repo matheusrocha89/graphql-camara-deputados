@@ -1,15 +1,37 @@
 import querystring from 'query-string';
+import omit from 'lodash/omit';
+
+export const encodeBase64 = data => Buffer.from(String(data)).toString('base64');
+
+export const decodeBase64 = data => Buffer.from(data, 'base64').toString('ascii');
+
+export const mountQueryString = (args) => {
+  if (args.after) {
+    return querystring.stringify(omit({
+      ...args,
+      pagina: decodeBase64(args.after),
+      itens: args.first,
+    }, ['first', 'after']));
+  }
+
+  return querystring.stringify(omit({
+    ...args,
+    itens: args.first,
+  }, ['first', 'after']));
+};
 
 export const returnPagination = (links) => {
   const current = links.filter(item => item.rel === 'self')[0];
+  const currentPage = querystring.parse(current.href).pagina || 1;
   const next = links.filter(item => item.rel === 'next')[0];
-  const first = links.filter(item => item.rel === 'first')[0];
-  const last = links.filter(item => item.rel === 'last')[0];
+  const endCursor = next ? encodeBase64(querystring.parse(next.href).pagina) : null;
+  const hasNextPage = !!next;
 
   return {
-    current: querystring.parse(current.href).pagina,
-    next: next ? querystring.parse(next.href).pagina : null,
-    first: querystring.parse(first.href).pagina,
-    last: querystring.parse(last.href).pagina,
+    current: encodeBase64(currentPage),
+    pageInfo: {
+      endCursor,
+      hasNextPage,
+    },
   };
 };

@@ -12,4 +12,5 @@ type BlocoCursor {
 
 type BlocoEdge {
   node: Bloco
+  cursor: String
 }

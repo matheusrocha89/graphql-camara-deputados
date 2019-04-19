@@ -1,18 +1,17 @@
-import querystring from 'query-string';
 import omit from 'lodash/omit';
 
 import clientAPI from '../../clients/deputados-api';
-import { returnPagination } from '../../utils/pagination';
+import { returnPagination, mountQueryString } from '../../utils/pagination';
 
 const deputados = async (_, args) => {
   try {
-    const query = querystring.stringify(omit(args, ['id']));
+    const query = mountQueryString(args);
     const { data } = await clientAPI.get(`/deputados?${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
 
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);
@@ -30,12 +29,12 @@ const deputado = async (_, { id }) => {
 
 const deputadoDespesas = async (_, args) => {
   try {
-    const query = querystring.stringify(omit(args, ['id']));
+    const query = mountQueryString(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/despesas?${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);
@@ -44,12 +43,12 @@ const deputadoDespesas = async (_, args) => {
 
 const deputadoEventos = async (_, args) => {
   try {
-    const query = querystring.stringify(omit(args, ['id']));
+    const query = mountQueryString(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/eventos?${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);
@@ -58,12 +57,12 @@ const deputadoEventos = async (_, args) => {
 
 const deputadoOrgaos = async (_, args) => {
   try {
-    const query = querystring.stringify(omit(args, ['id']));
+    const query = mountQueryString(omit(args, ['id']));
     const { data } = await clientAPI.get(`/deputados/${args.id}/orgaos${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);

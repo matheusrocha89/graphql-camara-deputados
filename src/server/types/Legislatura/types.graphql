@@ -12,4 +12,5 @@ type LegislaturaCursor {
 
 type LegislaturaEdge {
   node: Legislatura
+  cursor: String
 }

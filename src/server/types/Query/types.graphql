@@ -3,8 +3,8 @@ type Query {
     id: [Int],
     idLegislatura: [Int],
     siglaPartido: [String],
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): BlocoCursor
@@ -17,8 +17,8 @@ type Query {
     siglaUf: [String],
     siglaPartido: [String],
     siglaSexo: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     dataInicio: String,
     dataFim: String,
     ordem: String,
@@ -32,8 +32,8 @@ type Query {
     ano: [Int],
     mes: [Int],
     cnpjCpfFornecedor: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): DespesaCursor
@@ -41,8 +41,8 @@ type Query {
     id: ID!,
     dataInicio: String,
     dataFim: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): EventoCursor
@@ -50,8 +50,8 @@ type Query {
     id: ID!,
     dataInicio: String,
     dataFim: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): OrgaoCursor
@@ -66,8 +66,8 @@ type Query {
     dataFim: String,
     horaInicio: String,
     horaFim: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): EventoCursor
@@ -81,8 +81,8 @@ type Query {
   legislaturas(
     id: [Int],
     data: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): LegislaturaCursor
@@ -98,8 +98,8 @@ type Query {
     dataInicio: String,
     dataFim: String,
     idLegislatura: [Int],
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): PartidoCursor
@@ -111,8 +111,8 @@ type Query {
     idLegislatura: [Int],
     ordenarPor: String,
     ordem: String,
-    itens: Int!,
-    pagina: Int!
+    first: Int!,
+    after: String
   ): [Deputado]
 
   proposicoes(
@@ -132,8 +132,8 @@ type Query {
     dataApresentacaoInicio: String,
     dataApresentacaoFim: String,
     idSituacao: [Int],
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): ProposicaoCursor
@@ -153,8 +153,8 @@ type Query {
     idTipoOrgao: [Int],
     dataInicio: String,
     dataFim: String,
-    pagina: Int!,
-    itens: Int!,
+    after: String,
+    first: Int!,
     ordem: String,
     ordenarPor: String
   ): OrgaoCursor
@@ -164,8 +164,8 @@ type Query {
     idTipoEvento: [Int],
     dataInicio: String,
     dataFim: String,
-    pagina: Int,
-    itens: Int,
+    after: Int,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): EventoCursor
@@ -173,15 +173,15 @@ type Query {
     id: ID!,
     dataInicio: String,
     dataFim: String,
-    pagina: Int,
-    itens: Int
+    after: Int,
+    first: Int
   ): [MembroOrgao]
   orgaoSituacoes: [Situacao]
 
   votacao(id: ID!): Votacao
   votacaoVotos(
     id: ID!,
-    pagina: Int!,
-    itens: Int!
+    after: String,
+    first: Int!
   ): VotoCursor
 }

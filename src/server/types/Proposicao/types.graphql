@@ -30,6 +30,7 @@ type ProposicaoCursor {
 
 type ProposicaoEdge {
   node: Proposicao
+  cursor: String
 }
 
 type StatusProposicao {

@@ -17,6 +17,7 @@ type PartidoCursor {
 
 type PartidoEdge {
   node: Partido
+  cursor: String
 }
 
 type StatusPartido {
