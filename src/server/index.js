@@ -20,7 +20,7 @@ const startServer = () => {
       formatParams: args => removeEmptyProperties(args),
     };
 
-    server.start(options, ({ port }) => console.log(`Server is running on port: ${port}`));
+    server.start(options, ({ port }) => console.log(`Server is running on: http://localhost:${port}`));
   } catch (e) {
     throw new Error(e.message);
   }
