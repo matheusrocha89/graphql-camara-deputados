@@ -40,14 +40,13 @@ yarn build
 ```
 # List of deputies
 query {
-  deputados (pagina: 1, itens: 20) {
+  deputados (first: 20, after: "MQ==") {
     pageInfo {
-      current
-      next
-      first
-      last
+      endCursor
+      hasNextPage
     }
     edges {
+      cursor
       node {
         id
         siglaPartido
@@ -75,14 +74,13 @@ query {
 ```
 # Expenses of a deputy
 query {
-  deputadoDespesas(id: "178912", pagina: 1, itens: 15) {
+  deputadoDespesas(id: "178912", after: "MQ==", itens: 15) {
     pageInfo {
-      current
-      next
-      first
-      last
+      endCursor
+      hasNextPage
     }
     edges {
+      cursor
       node {
         ano
         valorDocumento

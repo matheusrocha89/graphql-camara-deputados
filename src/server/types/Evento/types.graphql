@@ -21,6 +21,7 @@ type EventoCursor {
 
 type EventoEdge {
   node: Evento
+  cursor: String
 }
 
 type LocalCamara {

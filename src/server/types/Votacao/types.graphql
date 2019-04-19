@@ -59,6 +59,7 @@ type VotoCursor {
 
 type VotoEdge {
   node: Voto
+  cursor: String
 }
 
 type Parlamentar {

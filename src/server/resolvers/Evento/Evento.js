@@ -1,16 +1,14 @@
-import querystring from 'query-string';
-
 import clientAPI from '../../clients/deputados-api';
-import { returnPagination } from '../../utils/pagination';
+import { returnPagination, mountQueryString } from '../../utils/pagination';
 
 const eventos = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = mountQueryString(args);
     const { data } = await clientAPI.get(`/eventos?${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);

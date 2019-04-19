@@ -1,17 +1,16 @@
-import querystring from 'query-string';
 import omit from 'lodash/omit';
 
 import clientAPI from '../../clients/deputados-api';
-import { returnPagination } from '../../utils/pagination';
+import { returnPagination, mountQueryString } from '../../utils/pagination';
 
 const legislaturas = async (_, args) => {
   try {
-    const query = querystring.stringify(args);
+    const query = mountQueryString(args);
     const { data } = await clientAPI.get(`/legislaturas?${query}`);
-    const pagination = returnPagination(data.links);
+    const { pageInfo, current } = returnPagination(data.links);
     return {
-      pageInfo: pagination,
-      edges: data.dados.map(item => ({ node: item })),
+      pageInfo,
+      edges: data.dados.map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new Error(e.message);
@@ -29,7 +28,7 @@ const legislatura = async (_, { id }) => {
 
 const legislaturaMesa = async (_, args) => {
   try {
-    const query = querystring.stringify(omit(args, ['id']));
+    const query = mountQueryString(omit(args, ['id']));
     const { data } = await clientAPI.get(`/legislaturas/${args.id}/mesa?${query}`);
     return data.dados;
   } catch (e) {

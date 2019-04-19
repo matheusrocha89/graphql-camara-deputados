@@ -1,6 +1,4 @@
 type PageInfo {
-  current: Int!
-  next: Int
-  first: Int!
-  last: Int!
+  endCursor: String
+  hasNextPage: Boolean
 }

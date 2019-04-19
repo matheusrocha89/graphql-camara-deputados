@@ -31,6 +31,7 @@ type DeputadoSimplesCursor {
 
 type DeputadoSimplesEdge {
   node: DeputadoSimples
+  cursor: String
 }
 
 type UltimoStatus {
@@ -86,4 +87,5 @@ type DespesaCursor {
 
 type DespesaEdge {
   node: Despesa
+  cursor: String
 }
