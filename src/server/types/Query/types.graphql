@@ -4,7 +4,7 @@ type Query {
     idLegislatura: [Int],
     siglaPartido: [String],
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): BlocoCursor
@@ -18,7 +18,7 @@ type Query {
     siglaPartido: [String],
     siglaSexo: String,
     after: String,
-    first: Int!,
+    first: Int,
     dataInicio: String,
     dataFim: String,
     ordem: String,
@@ -33,7 +33,7 @@ type Query {
     mes: [Int],
     cnpjCpfFornecedor: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): DespesaCursor
@@ -42,7 +42,7 @@ type Query {
     dataInicio: String,
     dataFim: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): EventoCursor
@@ -51,7 +51,7 @@ type Query {
     dataInicio: String,
     dataFim: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): OrgaoCursor
@@ -67,7 +67,7 @@ type Query {
     horaInicio: String,
     horaFim: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): EventoCursor
@@ -82,7 +82,7 @@ type Query {
     id: [Int],
     data: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): LegislaturaCursor
@@ -99,7 +99,7 @@ type Query {
     dataFim: String,
     idLegislatura: [Int],
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): PartidoCursor
@@ -111,7 +111,7 @@ type Query {
     idLegislatura: [Int],
     ordenarPor: String,
     ordem: String,
-    first: Int!,
+    first: Int,
     after: String
   ): [Deputado]
 
@@ -133,7 +133,7 @@ type Query {
     dataApresentacaoFim: String,
     idSituacao: [Int],
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): ProposicaoCursor
@@ -154,7 +154,7 @@ type Query {
     dataInicio: String,
     dataFim: String,
     after: String,
-    first: Int!,
+    first: Int,
     ordem: String,
     ordenarPor: String
   ): OrgaoCursor
