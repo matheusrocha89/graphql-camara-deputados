@@ -74,7 +74,7 @@ query {
 ```
 # Expenses of a deputy
 query {
-  deputadoDespesas(id: "178912", after: "MQ==", itens: 15) {
+  deputadoDespesas(id: "178912", after: "MQ==") {
     pageInfo {
       endCursor
       hasNextPage
