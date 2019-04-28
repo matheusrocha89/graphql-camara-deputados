@@ -1,7 +1,7 @@
 # GraphQL - Câmara dos Deputados
 API GraphQL com os dados da câmara de deputados do Brasil
 
-![demo-screenshot](https://user-images.githubusercontent.com/3718366/56203532-5c572f80-603d-11e9-9e12-0dbf0223fc8b.png)
+![image](https://user-images.githubusercontent.com/3718366/56861149-31060600-6996-11e9-9f8b-1e6a2b3043e2.png)
 
 # Original REST API doc
 
