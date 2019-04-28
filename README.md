@@ -3,6 +3,11 @@ API GraphQL com os dados da câmara de deputados do Brasil
 
 ![image](https://user-images.githubusercontent.com/3718366/56861149-31060600-6996-11e9-9f8b-1e6a2b3043e2.png)
 
+# Purpose of the project
+
+The purpose that motivated me to create this project is to make easier for developers to consume this data and create
+new apps (mobile, web, etc.) to deliver good information for citizens in Brazil or the world.
+
 # Original REST API doc
 
 https://dadosabertos.camara.leg.br/swagger/api.html
