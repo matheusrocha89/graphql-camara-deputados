@@ -60,13 +60,29 @@ query {
 ```
 # Data from one deputy
 query {
-  deputado(id: "178912") {
+	deputado(id: "178912") {
     id
-    escolaridade
+    nomeCivil
     cpf
     dataNascimento
-    nomeCivil
+    escolaridade
     municipioNascimento
+    ufNascimento
+    dataFalecimento
+    sexo
+    ultimoStatus {
+      siglaPartido
+      uriPartido
+      urlFoto
+      gabinete {
+        andar
+        email
+        nome
+        predio
+        sala
+        telefone
+      }
+    }
   }
 }
 ```
