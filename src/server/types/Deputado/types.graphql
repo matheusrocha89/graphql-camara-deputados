@@ -40,7 +40,7 @@ type UltimoStatus {
   condicaoEleitoral: String
   data: String
   descricaoStatus: String
-  cabinet: String
+  gabinete: Gabinete
   idLegislatura: Int
   nome: String
   nomeEleitoral: String
@@ -52,7 +52,7 @@ type UltimoStatus {
   urlFoto: String
 }
 
-type Cabinete {
+type Gabinete {
   andar: String
   email: String
   nome: String
