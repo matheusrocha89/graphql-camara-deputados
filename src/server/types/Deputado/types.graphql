@@ -11,6 +11,7 @@ type Deputado {
   ufNascimento: String
   uri: String
   urlWebsite: String
+  ultimoStatus: UltimoStatus
 }
 
 type DeputadoSimples {
