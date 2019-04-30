@@ -65,7 +65,7 @@ query {
 ```
 # Data from one deputy
 query {
-	deputado(id: "178912") {
+  deputado(id: "178912") {
     id
     nomeCivil
     cpf
