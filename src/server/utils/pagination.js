@@ -22,9 +22,9 @@ export const mountQueryString = (args) => {
 
 export const returnPagination = (links) => {
   const current = links.filter(item => item.rel === 'self')[0];
-  const currentPage = querystring.parse(current.href).pagina || 1;
+  const currentPage = querystring.parse(current.href.split('?')[1]).pagina || 1;
   const next = links.filter(item => item.rel === 'next')[0];
-  const endCursor = next ? encodeBase64(querystring.parse(next.href).pagina) : null;
+  const endCursor = next ? encodeBase64(querystring.parse(next.href.split('?')[1]).pagina) : null;
   const hasNextPage = !!next;
 
   return {
