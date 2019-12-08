@@ -18,6 +18,8 @@ const startServer = () => {
 
     const options = {
       formatParams: args => removeEmptyProperties(args),
+      endpoint: '/graphql',
+      playground: '/playground',
     };
 
     // eslint-disable-next-line no-console
