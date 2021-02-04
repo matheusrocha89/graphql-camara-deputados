@@ -39,7 +39,7 @@
     "rimraf": "2.6.3"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "graphql-yoga": "^1.17.4",
     "lodash": "^4.17.19",
     "merge-graphql-schemas": "^1.5.8",
